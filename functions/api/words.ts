@@ -24,8 +24,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     p.forms = JSON.parse(p.forms as string);
     p.senses = JSON.parse(p.senses as string);
     result = {
-      ...word,
       ...p,
+      ...word,
     };
   }
   return Response.json(result);
