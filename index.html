@@ -4,11 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C</title>
+  <title>Collins API</title>
 </head>
 
 <body>
-  Hello
+  <input id="word" type="text">
+  <button id="search">查询</button>
+  <br>
+  <a id="link" href="" target="_blank"></a>
+  <br>
+  <pre>
+
+  <code id="res"></code>
+  </pre>
+
+  <script>
+    search.onclick = () => {
+      const w = word.value
+      if (w) {
+        const url = location.origin + `/api/words?word=${w}`
+        link.href = url
+        link.innerText = url
+        fetch(url)
+          .then(r => r.json())
+          .then(j => JSON.stringify(j, null, 2))
+          .then(t => res.innerText = t)
+      }
+    }
+  </script>
 </body>
 
 </html>
