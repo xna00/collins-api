@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <input id="word" type="text">
+  <input id="word" type="text" value="hello">
   <button id="search">查询</button>
   <br>
   <a id="link" href="" target="_blank"></a>
@@ -19,6 +19,9 @@
   </pre>
 
   <script>
+    const url = location.origin + `/api/words?word=hello`
+    link.href = url
+    link.innerText = url
     search.onclick = () => {
       const w = word.value
       if (w) {
