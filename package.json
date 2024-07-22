@@ -1,0 +1,11 @@
+{
+	"type": "module",
+	"scripts": {
+		"build": "rm -rf dist && mkdir dist && cp index.html dist/ && cp -r functions dist/ "
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240718.0",
+		"typescript": "^5.5.3",
+		"wrangler": "^3.65.1"
+	}
+}
